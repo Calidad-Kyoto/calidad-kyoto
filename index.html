@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portal de Calidad · Kyoto Nissan</title>
+  <meta name="description" content="Accesos, proveedores y mantenimiento del área de Calidad de Kyoto Nissan.">
+  <link rel="icon" href="img/logo-nissan-kyoto.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <div id="banner-demo" class="banner-demo" hidden>
+    <i data-lucide="flask-conical"></i> Modo demo: los cambios no se guardan en el Sheet.
+  </div>
+
+  <header class="cabecera">
+    <div class="cabecera__in">
+      <a href="#accesos" class="cabecera__logo" aria-label="Ir a Accesos">
+        <img src="img/logo-nissan-kyoto.png" alt="Nissan Kyoto" width="117" height="40">
+      </a>
+      <div class="cabecera__titulo">
+        <span class="cabecera__nombre">Portal de Calidad</span>
+        <button type="button" id="btn-quien" class="quien" aria-label="Cambiar quién carga">
+          <i data-lucide="user-round"></i><span id="quien-texto">Identificate</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="solapas" aria-label="Secciones">
+    <div class="solapas__in" role="tablist">
+      <button class="solapa" role="tab" id="tab-accesos" aria-controls="panel-accesos" data-solapa="accesos">
+        <i data-lucide="layout-grid"></i><span>Accesos</span>
+      </button>
+      <button class="solapa" role="tab" id="tab-proveedores" aria-controls="panel-proveedores" data-solapa="proveedores">
+        <i data-lucide="truck"></i><span>Proveedores</span>
+      </button>
+      <button class="solapa" role="tab" id="tab-mantenimiento" aria-controls="panel-mantenimiento" data-solapa="mantenimiento">
+        <i data-lucide="wrench"></i><span>Mantenimiento</span>
+      </button>
+      <span class="solapas__indicador" aria-hidden="true"></span>
+    </div>
+  </nav>
+
+  <main class="contenido">
+    <section id="panel-accesos" class="panel" role="tabpanel" aria-labelledby="tab-accesos" hidden></section>
+    <section id="panel-proveedores" class="panel" role="tabpanel" aria-labelledby="tab-proveedores" hidden></section>
+    <section id="panel-mantenimiento" class="panel" role="tabpanel" aria-labelledby="tab-mantenimiento" hidden></section>
+  </main>
+
+  <footer class="pie">Kyoto Nissan · Área de Calidad</footer>
+
+  <div id="toasts" class="toasts" aria-live="polite"></div>
+  <div id="capa-modal"></div>
+
+  <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+  <script src="config.js"></script>
+  <script src="logica.js"></script>
+  <script src="demo.js"></script>
+  <script src="api.js"></script>
+  <script src="app.js"></script>
+  <script src="accesos.js"></script>
+  <script src="proveedores.js"></script>
+  <script src="mantenimiento.js"></script>
+  <script>App.iniciar();</script>
+</body>
+</html>
